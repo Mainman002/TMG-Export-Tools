@@ -495,7 +495,13 @@ def main(_directory):
     for ob in _previous_obs:
         ob.select_set(state=True)
     bpy.context.view_layer.objects.active = _previous_obs[-1]
+    
     print(str('Directory: ' + _path + '\nFINISHED'))
+
+    if tmg_exp_vars.exp_apply_mesh:
+        bpy.ops.ed.undo_push()
+        bpy.ops.ed.undo()
+    
     return{'FINISHED'}
 
 
