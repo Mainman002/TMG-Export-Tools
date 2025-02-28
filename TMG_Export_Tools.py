@@ -444,6 +444,11 @@ def main(_directory):
         print('\nNo Objects')
         
     print(str('Directory: ' + _path + '\nFINISHED'))
+
+    if tmg_exp_vars.exp_apply_mesh:
+        bpy.ops.ed.undo_push()
+        bpy.ops.ed.undo()
+
     return{'FINISHED'}
 
 
